@@ -1,0 +1,22 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.greeting {
+  max-width: 500px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.dashboardReport {
+    display: grid;
+}

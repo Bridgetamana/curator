@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatarWrapper {
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1px solid var(--tertiary);
+  overflow: hidden;
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+}
+
+.searchBar {
+    display: flex;
+    gap: 10px;
+    border-radius: 999px;
+    background-color: var(--cards);
+    padding: 6px 12px;
+
+    input {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        font-size: 12px;
+        color: var(--tertiary);
+    }
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .actionIcons {
+        display: flex;
+        gap: 12px;
+        border-right: 2px solid var(--cards);
+        padding-right: 14px;
+    }
+}

@@ -1,72 +1,73 @@
 .sidebar {
-    width: 200px;
-    background-color: var(--cards);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #a2a1a1;
-    min-height: 100vh;
+  background-color: var(--cards);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #a2a1a1;
+  min-height: 100vh;
 }
 
 .logo {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 20px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .sidebarGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 1.75rem 0;
 
-    .sidebarItem {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        cursor: pointer;
-
-        &:hover {
-            color: var(--primary);
-            border-right: 2px solid var(--primary);
-        }
-    }
-}
-
-.createTask {
-    display: flex;
-    justify-content: center;
-    padding: .5rem;
-    width: 100%;
-    gap: 10px;
-    border-radius: var(--radius);
-    text-transform: uppercase;
-    background-color: var(--primary);
-    color: var(--tertiary);
-    font-size: 14px;
-}
-
-.userMenu {
+  .sidebarItem {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
 
-    .avatarWrapper {
-        border-radius: 999px;
-        border: 1px solid var(--tertiary);
-        width: 25%;
+    &:hover {
+      color: var(--primary);
+      border-right: 2px solid var(--primary);
     }
+  }
+}
 
-    .userName {
-        font-size: 14px;
-        font-weight: 600;
-    }
+.createTask {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 100%;
+  gap: 10px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  background-color: var(--primary);
+  color: var(--tertiary);
+  font-size: 14px;
+}
 
-    .userTitle {
-        font-size: 12px;
-        opacity: 60%;
-    }
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .avatarWrapper {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    border: 1px solid var(--tertiary);
+    overflow: hidden;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  .userName {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .userTitle {
+    font-size: 12px;
+    opacity: 60%;
+  }
 }
