@@ -20,9 +20,17 @@ body {
   line-height: 1.5;
 }
 
+button {
+  border: transparent;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style: none;
 }
 
 input:is([type="checkbox"], [type="radio"]),
@@ -41,14 +49,13 @@ svg {
   max-width: 100%;
 }
 
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
 input,
 button,
 textarea,
 select {
   font: inherit;
+}
+
+.app {
+  display: flex;
 }
