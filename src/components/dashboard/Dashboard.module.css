@@ -18,5 +18,177 @@
 }
 
 .dashboardReport {
-    display: grid;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .reportCard {
+    width: 55%;
+    background-color: var(--cards);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+  }
+
+  .reportCardHeader {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .reportCardDetails {
+    margin-block: 1rem;
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 12px;
+      opacity: 70%;
+    }
+  }
+}
+
+.focusCard {
+  width: 30%;
+  background-color: var(--cards);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .focusTime {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 80%;
+  }
+
+  .time {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+  }
+
+  .hoursSpent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2b2b2b;
+      padding-bottom: 4px;
+
+      p:first-child {
+        opacity: 60%;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.logReport {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+
+  .projectsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    button {
+      background-color: transparent;
+      color: var(--primary);
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 12px;
+
+      .ledgerDetails {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        .iconWrapper {
+          background-color: var(--cards);
+          display: flex;
+          padding: 0.75rem;
+          color: var(--primary);
+          border-radius: var(--radius);
+        }
+
+        .projectDetails p:first-child {
+          font-weight: 600;
+        }
+
+        .projectDetails p:last-child {
+          opacity: 60%;
+          font-size: 12px;
+        }
+      }
+
+      .projectStatus {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        .avatarStack {
+          display: flex;
+          align-items: center;
+          
+          img {
+            width: 1.75rem;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--cards);
+            flex: 0 0 auto;
+          }
+
+          img + img {
+            margin-left: -0.5rem;
+          }
+        }
+
+        span {
+          text-transform: uppercase;
+          font-size: 10px;
+          font-weight: 600;
+          padding: 6px;
+          background-color: var(--cards);
+          border-radius: var(--radius);
+        }
+      }
+    }
+  }
 }
