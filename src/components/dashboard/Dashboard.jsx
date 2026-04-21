@@ -170,8 +170,8 @@ const Dashboard = () => {
           </ul>
         </div>
 
-        <div>
-          <div>
+        <div className={styles.activityLog}>
+          <div className={styles.activityLogHeader}>
             <p>Activity Log</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +179,7 @@ const Dashboard = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              width={18}
+              width={12}
             >
               <path
                 strokeLinecap="round"
@@ -188,24 +188,30 @@ const Dashboard = () => {
               />
             </svg>
           </div>
-          <ul>
+          <ul className={styles.activities}>
             <li>
-              <span></span>
-              <div>
+              <div className={styles.indicator}>
+                <div className={styles.indicatorinside}></div>
+              </div>
+              <div className={styles.activityDetails}>
                 <p>Julianne S. approved the Design Tokens draft.</p>
                 <p>24 minutes ago</p>
               </div>
             </li>
             <li>
-              <span></span>
-              <div>
+              <div className={styles.indicator}>
+                <div className={styles.indicatorinside}></div>
+              </div>
+              <div className={styles.activityDetails}>
                 <p>New focus session recorded: 3h 45m in Atelier Workspace.</p>
                 <p>2 Hours ago</p>
               </div>
             </li>
             <li>
-              <span></span>
-              <div>
+              <div className={styles.indicator}>
+                <div className={styles.indicatorinside}></div>
+              </div>
+              <div className={styles.activityDetails}>
                 <p>
                   Liam W. commented on{" "}
                   <a href="#">Task #102: Typography Scales.</a>
@@ -213,15 +219,8 @@ const Dashboard = () => {
                 <p>yesterday</p>
               </div>
             </li>
-            <li>
-              <span></span>
-              <div>
-                <p>Milestone reached: Brand identity v1.0 finalized</p>
-                <p>October 12</p>
-              </div>
-            </li>
           </ul>
-          <button>Full Audit Trail</button>
+          <button className={styles.auditButton}>Full Audit Trail</button>
         </div>
       </div>
     </section>
