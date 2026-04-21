@@ -8,10 +8,10 @@ const Dashboard = () => {
     { day: "Mon", focusHours: 4.2 },
     { day: "Tue", focusHours: 5.8 },
     { day: "Wed", focusHours: 3.6 },
-    { day: "Thu", focusHours: 6.1 },
+    { day: "Thu", focusHours: 8.1 },
     { day: "Fri", focusHours: 5.4 },
-    { day: "Sat", focusHours: 3.1 },
-    { day: "Sun", focusHours: 4.3 },
+    { day: "Sat", focusHours: 4.1 },
+    { day: "Sun", focusHours: 1.3 },
   ];
   return (
     <section className={styles.dashboard}>
