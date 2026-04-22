@@ -1,18 +1,23 @@
-import Dashboard from "./components/dashboard/Dashboard";
-import Header from "./components/header/Header";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
+import Header from "./components/header/Header";
+import Dashboard from "./components/dashboard/Dashboard";
+import Board from "./components/board/Board";
+import List from "./components/list/List";
+import Projects from "./components/projects/Projects";
+import Setting from "./components/setting/Setting";
 
-function App() {
+function AppLayout() {
   return (
     <div className="appLayout">
       <Sidebar />
       <div className="content">
         <Header />
         <main>
-          <Dashboard />
+          <Outlet />
         </main>
       </div>
-      <button className="questionButton">
+      <button className="questionButton" aria-label="Quick actions">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -29,6 +34,21 @@ function App() {
         </svg>
       </button>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route element={<AppLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="board" element={<Board />} /> 
+        <Route path="list" element={<List />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="settings" element={<Setting />} />
+      </Route>
+    </Routes>
   );
 }
 

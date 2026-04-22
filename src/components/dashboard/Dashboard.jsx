@@ -1,9 +1,8 @@
-import React from "react";
 import styles from "./Dashboard.module.css";
 import { BarChart, Bar } from "recharts";
 import avatar from "../../assets/avatar.webp";
 
-const Dashboard = () => {
+export default function Dashboard() {
   const momentumData = [
     { day: "Mon", focusHours: 4.2 },
     { day: "Tue", focusHours: 5.8 },
@@ -226,5 +225,3 @@ const Dashboard = () => {
     </section>
   );
 };
-
-export default Dashboard;

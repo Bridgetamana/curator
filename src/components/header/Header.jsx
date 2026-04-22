@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "./Header.module.css";
 import avatar from "../../assets/avatar.webp";
 
-const Header = () => {
+export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.searchBar}>
@@ -57,5 +56,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

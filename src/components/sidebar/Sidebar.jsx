@@ -1,12 +1,13 @@
-import React from "react";
 import styles from "./Sidebar.module.css";
 import avatar from "../../assets/avatar.webp";
+import { NavLink } from "react-router";
 
-const Sidebar = () => {
+export default function Sidebar (){
   const sidebarList = [
     {
       id: 1,
       title: "Dashboard",
+      path: "dashboard",
       icon: (<svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -20,6 +21,7 @@ const Sidebar = () => {
     {
       id: 2,
       title: "Board",
+      path: "board",
       icon: (<svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -36,6 +38,7 @@ const Sidebar = () => {
     {
       id: 3,
       title: "List",
+      path: "list",
       icon: (<svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -52,6 +55,7 @@ const Sidebar = () => {
     {
       id: 4,
       title: "Projects",
+      path: "projects",
       icon: (<svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -69,6 +73,7 @@ const Sidebar = () => {
     {
       id: 5,
       title: "Settings",
+      path: "settings",
       icon: (<svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -85,6 +90,7 @@ const Sidebar = () => {
     {
       id: 6,
       title: "Support",
+      path: "support",
       icon: (
         <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -109,10 +115,10 @@ const Sidebar = () => {
         <ul className={styles.sidebarGroup}>
           {sidebarList.slice(0, 4).map((sidebar) => (
             <li className={styles.sidebarItem} key={sidebar.id}>
-              <a href="#">
+              <NavLink to={sidebar.path}>
                 {sidebar.icon}
                 {sidebar.title}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -139,10 +145,10 @@ const Sidebar = () => {
         <ul className={styles.sidebarGroup}>
           {sidebarList.slice(4, 6).map((sidebar) => (
             <li className={styles.sidebarItem} key={sidebar.id}>
-              <a href="#">
+              <NavLink to={sidebar.path}>
                 {sidebar.icon}
                 {sidebar.title}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -159,5 +165,3 @@ const Sidebar = () => {
     </aside>
   );
 };
-
-export default Sidebar;
