@@ -1,0 +1,139 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.boardHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.boardTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.boardTitle {
+  font-size: var(--title);
+}
+
+.boardSubtitle {
+  font-size: var(--subtext);
+  color: var(--muted_text);
+}
+
+.boardAction {
+  border-radius: 0.5rem;
+  background: var(--secondary);
+  color: var(--main_text);
+  padding: 0.5rem 0.75rem;
+  font-size: var(--subtext);
+}
+
+.boardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+.column {
+  padding: 0.9rem;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.columnHeader {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.columnTitle {
+  font-size: var(--subtext);
+  text-transform: uppercase;
+}
+
+.columnCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--radius);
+  background: var(--cards);
+  color: var(--main_text);
+  font-size: var(--label);
+  padding: 0.45rem;
+}
+
+.columnAddButton {
+  justify-self: end;
+  color: var(--main_text);
+}
+
+.cardList {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.card {
+  background: var(--cards);
+  border-radius: 10px;
+  padding: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+}
+
+.cardTag {
+  align-self: start;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: var(--label);
+  font-weight: 600;
+  background: var(--secondary);
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: var(--subtext);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.cardDue {
+  font-size: var(--label);
+  color: var(--muted_text);
+}
+
+.assigneeImage {
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 960px) {
+  .boardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: auto;
+  }
+}

@@ -23,7 +23,7 @@ function AppLayout() {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
-          stroke="currentColor"
+          stroke="#d9d9d9"
           width={18}
         >
           <path
@@ -43,7 +43,7 @@ function App() {
       <Route element={<AppLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="board" element={<Board />} /> 
+        <Route path="board" element={<Board />} />
         <Route path="list" element={<List />} />
         <Route path="projects" element={<Projects />} />
         <Route path="settings" element={<Setting />} />

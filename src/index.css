@@ -3,11 +3,20 @@
 :root {
   --primary: #53834e;
   --secondary: #3f443d;
-  --tertiary: #d9d9d9;
+  --main_text: #d9d9d9;
+  --muted_text: #9e9d9d;
   --bg: #0d0e0d;
   --cards: #121412;
   --radius: 0.5rem;
-  color: var(--tertiary);
+  --title: 1.75rem;
+  --subtext: 0.875rem;
+  --label: 0.75rem;
+  --spacing-xl: 2rem;
+  --spacing-lg: 1.5rem;
+  --spacing-md: 1rem;
+  --spacing-sm: 0.75rem;
+  --spacing-xs: 0.35rem;
+  color: var(--main_text);
   background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,12 +26,15 @@
 
 body {
   font-family: "Public Sans", sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
   min-height: 100dvh;
 }
 
 button {
   border: transparent;
+  background-color: transparent;
+  color: var(--main_text);
 }
 
 * {
@@ -39,6 +51,7 @@ select,
 label,
 button {
   cursor: pointer;
+  accent-color: var(--primary);
 }
 
 img {
@@ -48,9 +61,13 @@ img {
 
 input,
 button,
-textarea,
 select {
   font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .appLayout {

@@ -1,54 +1,59 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-xl);
 }
 
-.greeting {
+.greetingSection {
   max-width: 500px;
-
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-  }
-
-  p {
-    font-size: 14px;
-  }
 }
 
-.dashboardReport {
+.greetingTitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.greetingText {
+  font-size: var(--subtext);
+  color: var(--muted_text);
+}
+
+.reportGrid {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
 
-  .reportCard {
-    width: 55%;
-    background-color: var(--cards);
-    border-radius: var(--radius);
-    padding: 1rem 1.5rem;
-  }
+.momentumCard {
+  width: 55%;
+  background-color: var(--cards);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+}
 
-  .reportCardHeader {
-    color: var(--primary);
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 600;
-  }
+.cardNotice {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: var(--label);
+  font-weight: 600;
+}
 
-  .reportCardDetails {
-    margin-block: 1rem;
+.momentumContent {
+  margin-block: 1rem;
+}
 
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
 
-    p {
-      font-size: 12px;
-      opacity: 70%;
-    }
-  }
+.cardSubtitle {
+  font-size: var(--label);
+  color: var(--muted_text);
+}
+
+.chartWrap {
+  width: 100%;
 }
 
 .focusCard {
@@ -59,205 +64,206 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  .focusTime {
-    font-size: 10px;
-    text-transform: uppercase;
-    opacity: 80%;
-  }
-
-  .time {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-top: 0.75rem;
-  }
-
-  .hoursSpent {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #2b2b2b;
-      padding-bottom: 4px;
-
-      p:first-child {
-        opacity: 60%;
-        font-size: 12px;
-      }
-    }
-  }
 }
 
-.logReport {
+.focusLabel {
+  font-size: var(--label);
+  text-transform: uppercase;
+  color: var(--muted_text);
+}
+
+.focusTotal {
+  font-size: var(--title);
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.focusBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.focusBreakdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2b2b2b;
+  padding-bottom: 4px;
+}
+
+.focusCategory {
+  color: var(--muted_text);
+  font-size: var(--label);
+}
+
+.focusHours {
+  font-size: var(--label);
+}
+
+.bottomGrid {
   display: flex;
   width: 100%;
-  gap: 0.5rem;
+  gap: var(--spacing-sm);
   justify-content: space-between;
 }
 
-.projects {
+.projectsPanel {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   width: 60%;
-
-  .projectsHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    p {
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    button {
-      background-color: transparent;
-      color: var(--primary);
-      text-transform: uppercase;
-      cursor: pointer;
-      font-size: 14px;
-    }
-  }
-
-  .details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-inline: 12px;
-
-      .ledgerDetails {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-
-        .iconWrapper {
-          background-color: var(--cards);
-          display: flex;
-          padding: 0.75rem;
-          color: var(--primary);
-          border-radius: var(--radius);
-        }
-
-        .projectDetails p:first-child {
-          font-weight: 600;
-        }
-
-        .projectDetails p:last-child {
-          opacity: 60%;
-          font-size: 12px;
-        }
-      }
-
-      .projectStatus {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-
-        .avatarStack {
-          display: flex;
-          align-items: center;
-
-          img {
-            width: 1.75rem;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--cards);
-            flex: 0 0 auto;
-          }
-
-          img + img {
-            margin-left: -0.5rem;
-          }
-        }
-
-        span {
-          text-transform: uppercase;
-          font-size: 10px;
-          font-weight: 600;
-          padding: 6px;
-          background-color: var(--cards);
-          border-radius: var(--radius);
-        }
-      }
-    }
-  }
 }
 
-.activityLog {
+.projectsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projectsTitle {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.ledgerButton {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: var(--subtext);
+}
+
+.projectList {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-lg);
+}
+
+.projectItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 12px;
+}
+
+.projectMain {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.projectIcon {
+  background-color: var(--cards);
+  display: flex;
+  padding: 0.75rem;
+  color: var(--primary);
+  border-radius: var(--radius);
+}
+
+.projectText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.projectName {
+  font-weight: 600;
+}
+
+.projectMeta {
+  color: var(--muted_text);
+  font-size: var(--label);
+}
+
+.projectStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.avatarStack {
+  display: flex;
+  align-items: center;
+}
+
+.avatarStack img {
+  width: 1.75rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cards);
+  flex: 0 0 auto;
+}
+
+.avatarStack img + img {
+  margin-left: -0.5rem;
+}
+
+.statusBadge {
+  text-transform: uppercase;
+  font-size: var(--label);
+  font-weight: 600;
+  padding: 6px;
+  background-color: var(--cards);
+  border-radius: var(--radius);
+}
+
+.activityPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
   padding: 1.25rem;
   border-radius: var(--radius);
   background-color: #000;
   width: 30%;
+}
 
-  .activityLogHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.activityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    p {
-      font-weight: 600;
-      font-size: 18px;
-    }
-  }
-  .activities {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.activityTitle {
+  font-weight: 600;
+  font-size: 18px;
+}
 
-    li {
-      display: flex;
-      gap: 0.5rem;
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
 
-      .indicator {
-        width: 12px;
-        height: 12px;
-        background-color: var(--cards);
-        border-radius: 999px;
-        display: flex;
-        align-items: center;
-        padding: 6px;
-      }
+.activityItem {
+  display: flex;
+  gap: var(--spacing-sm);
+}
 
-      .indicatorinside {
-        width: 12px;
-        height: 12px;
-        background-color: var(--primary);
-        border-radius: 999px;
-      }
+.activityDot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary);
+  border-radius: 999px;
+  margin-top: 4px;
+  flex: 0 0 auto;
+}
 
-      .activityDetails p:first-child {
-        font-size: 13px;
-      }
+.activityText p:first-child {
+  font-size: var(--subtext);
+}
 
-      .activityDetails p:last-child {
-        text-transform: uppercase;
-        font-size: 10px;
-        opacity: 70%;
-        margin-top: 4px;
-      }
-    }
+.activityTime {
+  text-transform: uppercase;
+  font-size: var(--label);
+  color: var(--muted_text);
+  margin-top: 4px;
+}
 
-  }
-  .auditButton {
-    padding: 6px;
-    background-color: var(--cards);
-    color: var(--tertiary);
-    text-transform: uppercase;
-    font-size: 14px;
-    border-radius: var(--radius);
-  }
+.auditButton {
+  padding: 6px;
+  background-color: var(--cards);
+  color: var(--main_text);
+  text-transform: uppercase;
+  font-size: var(--subtext);
+  border-radius: var(--radius);
 }

@@ -4,72 +4,81 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #a2a1a1;
   min-height: 100dvh;
 }
 
-.logo {
-  color: var(--primary);
+.sidebarTop {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarBottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.brand {
   font-weight: 600;
   font-size: 20px;
 }
 
-.sidebarGroup {
+.navList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-md);
   margin: 1.75rem 0;
-
-  .sidebarItem a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-
-    &:hover {
-      color: var(--primary);
-      border-right: 2px solid var(--primary);
-    }
-  }
 }
 
-.createTask {
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--subtext);
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.navLinkActive {
+  color: var(--primary);
+  border-right: 2px solid var(--primary);
+}
+
+.createTaskButton {
   display: flex;
   justify-content: center;
   padding: 0.5rem;
   width: 100%;
-  gap: 10px;
+  gap: var(--spacing-sm);
   border-radius: var(--radius);
   text-transform: uppercase;
   background-color: var(--primary);
-  color: var(--tertiary);
-  font-size: 14px;
+  font-size: var(--label);
 }
 
-.userMenu {
+.userPanel {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
+  font-size: var(--label);
+}
 
-  .avatarWrapper {
-    flex: 0 0 auto;
-    border-radius: 50%;
-    border: 1px solid var(--tertiary);
-    overflow: hidden;
-    width: 2rem;
-    aspect-ratio: 1 / 1;
-  }
+.userAvatar {
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1px solid var(--main_text);
+  overflow: hidden;
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+}
 
-  .userName {
-    font-size: 14px;
-    font-weight: 600;
-  }
+.userName {
+  font-weight: 600;
+}
 
-  .userTitle {
-    font-size: 12px;
-    opacity: 60%;
-  }
+.userRole {
+  color: var(--subtext);
 }

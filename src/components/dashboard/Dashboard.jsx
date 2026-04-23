@@ -12,25 +12,27 @@ export default function Dashboard() {
     { day: "Sat", focusHours: 4.1 },
     { day: "Sun", focusHours: 1.3 },
   ];
+
   return (
     <section className={styles.dashboard}>
-      <div className={styles.greeting}>
-        <h1>Good Morning, Director</h1>
-        <p>
+      <header className={styles.greetingSection}>
+        <h1 className={styles.greetingTitle}>Good Morning, Director</h1>
+        <p className={styles.greetingText}>
           Your deep work block begins in 14 minutes. Focus on the Atelier
           Rebrand project today.
         </p>
-      </div>
+      </header>
 
-      <div className={styles.dashboardReport}>
-        <div className={styles.reportCard}>
-          <p className={styles.reportCardHeader}>Velocity report</p>
-          <div className={styles.reportCardDetails}>
-            <h2>Deep Work Momentum</h2>
-            <p>82% of weekly objectives achieved</p>
+      <section className={styles.reportGrid} aria-label="Performance reports">
+        <article className={styles.momentumCard}>
+          <p className={styles.cardNotice}>Velocity report</p>
+          <div className={styles.momentumContent}>
+            <h2 className={styles.cardTitle}>Deep Work Momentum</h2>
+            <p className={styles.cardSubtitle}>
+              82% of weekly objectives achieved
+            </p>
           </div>
-          <div>
-            {" "}
+          <div className={styles.chartWrap}>
             <BarChart
               style={{
                 width: "100%",
@@ -44,39 +46,44 @@ export default function Dashboard() {
               <Bar dataKey="focusHours" fill="#53834e" />
             </BarChart>
           </div>
-        </div>
-        <div className={styles.focusCard}>
+        </article>
+
+        <article className={styles.focusCard}>
           <div>
-            <p className={styles.focusTime}>Focus Time</p>
-            <date className={styles.time}>32.5hrs</date>
+            <p className={styles.focusLabel}>Focus Time</p>
+            <p className={styles.focusTotal}>32.5hrs</p>
           </div>
-          <ul className={styles.hoursSpent}>
-            <li>
-              <p>Architecture</p>
-              <p>12h</p>
+          <ul className={styles.focusBreakdown}>
+            <li className={styles.focusBreakdownItem}>
+              <p className={styles.focusCategory}>Architecture</p>
+              <p className={styles.focusHours}>12h</p>
             </li>
-            <li>
-              <p>Editorial Strategy</p>
-              <p>14h</p>
+            <li className={styles.focusBreakdownItem}>
+              <p className={styles.focusCategory}>Editorial Strategy</p>
+              <p className={styles.focusHours}>14h</p>
             </li>
-            <li>
-              <p>Curation</p>
-              <p>6.5h</p>
+            <li className={styles.focusBreakdownItem}>
+              <p className={styles.focusCategory}>Curation</p>
+              <p className={styles.focusHours}>6.5h</p>
             </li>
           </ul>
-        </div>
-      </div>
+        </article>
+      </section>
 
-      <div className={styles.logReport}>
-        <div className={styles.projects}>
-          <div className={styles.projectsHeader}>
-            <p>Active Projects</p>
-            <button>View Ledger</button>
-          </div>
-          <ul className={styles.details}>
-            <li>
-              <div className={styles.ledgerDetails}>
-                <div className={styles.iconWrapper}>
+      <section className={styles.bottomGrid}>
+        <article className={styles.projectsPanel}>
+          <header className={styles.projectsHeader}>
+            <h2 className={styles.projectsTitle}>Active Projects</h2>
+            <button type="button" className={styles.ledgerButton}>
+              View Ledger
+            </button>
+          </header>
+
+          <ul className={styles.projectList}>
+            <li className={styles.projectItem}>
+              <div className={styles.projectMain}>
+                <div className={styles.projectIcon}>
+                  {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -91,22 +98,26 @@ export default function Dashboard() {
                     <path d="M16.372 12.615a.75.75 0 0 1 .75 0l5.43 3.135a.75.75 0 0 1-.182 1.374l-.802.215a5.25 5.25 0 0 1-2.894-.051l-5.147-1.574a.75.75 0 0 1-.156-1.367l3-1.732Z" />
                   </svg>
                 </div>
-                <div className={styles.projectDetails}>
-                  <p>Atelier Rebrand 2024</p>
-                  <p>High Intensity . Due in 4 days</p>
+                <div className={styles.projectText}>
+                  <p className={styles.projectName}>Atelier Rebrand 2024</p>
+                  <p className={styles.projectMeta}>
+                    High Intensity . Due in 4 days
+                  </p>
                 </div>
               </div>
               <div className={styles.projectStatus}>
                 <div className={styles.avatarStack}>
-                  <img src={avatar} alt="" />
-                  <img src={avatar} alt="" />
+                  <img src={avatar} alt="Team member" />
+                  <img src={avatar} alt="Team member" />
                 </div>
-                <span>in progress</span>
+                <span className={styles.statusBadge}>In Progress</span>
               </div>
             </li>
-            <li>
-              <div className={styles.ledgerDetails}>
-                <div className={styles.iconWrapper}>
+
+            <li className={styles.projectItem}>
+              <div className={styles.projectMain}>
+                <div className={styles.projectIcon}>
+                  {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -122,21 +133,25 @@ export default function Dashboard() {
                     />
                   </svg>
                 </div>
-                <div className={styles.projectDetails}>
-                  <p>Digital Publication Q3</p>
-                  <p>Medium Intensity . Due in 12 days</p>
+                <div className={styles.projectText}>
+                  <p className={styles.projectName}>Digital Publication Q3</p>
+                  <p className={styles.projectMeta}>
+                    Medium Intensity . Due in 12 days
+                  </p>
                 </div>
               </div>
               <div className={styles.projectStatus}>
                 <div className={styles.avatarStack}>
-                  <img src={avatar} alt="" />
+                  <img src={avatar} alt="Team member" />
                 </div>
-                <span>Planning</span>
+                <span className={styles.statusBadge}>Planning</span>
               </div>
             </li>
-            <li>
-              <div className={styles.ledgerDetails}>
-                <div className={styles.iconWrapper}>
+
+            <li className={styles.projectItem}>
+              <div className={styles.projectMain}>
+                <div className={styles.projectIcon}>
+                  {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -152,76 +167,57 @@ export default function Dashboard() {
                     />
                   </svg>
                 </div>
-                <div className={styles.projectDetails}>
-                  <p>Art Direction Guide</p>
-                  <p>Low Intensity . Internal</p>
+                <div className={styles.projectText}>
+                  <p className={styles.projectName}>Art Direction Guide</p>
+                  <p className={styles.projectMeta}>Low Intensity . Internal</p>
                 </div>
               </div>
               <div className={styles.projectStatus}>
                 <div className={styles.avatarStack}>
-                  <img src={avatar} alt="" />
-                  <img src={avatar} alt="" />
-                  <img src={avatar} alt="" />
+                  <img src={avatar} alt="Team member" />
+                  <img src={avatar} alt="Team member" />
+                  <img src={avatar} alt="Team member" />
                 </div>
-                <span>Review</span>
+                <span className={styles.statusBadge}>Review</span>
               </div>
             </li>
           </ul>
-        </div>
+        </article>
 
-        <div className={styles.activityLog}>
-          <div className={styles.activityLogHeader}>
-            <p>Activity Log</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              width={12}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
-              />
-            </svg>
-          </div>
-          <ul className={styles.activities}>
-            <li>
-              <div className={styles.indicator}>
-                <div className={styles.indicatorinside}></div>
-              </div>
-              <div className={styles.activityDetails}>
+        <article className={styles.activityPanel}>
+          <header className={styles.activityHeader}>
+            <h2 className={styles.activityTitle}>Activity Log</h2>
+          </header>
+
+          <ul className={styles.activityList}>
+            <li className={styles.activityItem}>
+              <span className={styles.activityDot} aria-hidden="true"></span>
+              <div className={styles.activityText}>
                 <p>Julianne S. approved the Design Tokens draft.</p>
-                <p>24 minutes ago</p>
+                <p className={styles.activityTime}>24 minutes ago</p>
               </div>
             </li>
-            <li>
-              <div className={styles.indicator}>
-                <div className={styles.indicatorinside}></div>
-              </div>
-              <div className={styles.activityDetails}>
+            <li className={styles.activityItem}>
+              <span className={styles.activityDot} aria-hidden="true"></span>
+              <div className={styles.activityText}>
                 <p>New focus session recorded: 3h 45m in Atelier Workspace.</p>
-                <p>2 Hours ago</p>
+                <p className={styles.activityTime}>2 hours ago</p>
               </div>
             </li>
-            <li>
-              <div className={styles.indicator}>
-                <div className={styles.indicatorinside}></div>
-              </div>
-              <div className={styles.activityDetails}>
-                <p>
-                  Liam W. commented on{" "}
-                  <a href="#">Task #102: Typography Scales.</a>
-                </p>
-                <p>yesterday</p>
+            <li className={styles.activityItem}>
+              <span className={styles.activityDot} aria-hidden="true"></span>
+              <div className={styles.activityText}>
+                <p>Liam W. commented on Task #102: Typography Scales.</p>
+                <p className={styles.activityTime}>Yesterday</p>
               </div>
             </li>
           </ul>
-          <button className={styles.auditButton}>Full Audit Trail</button>
-        </div>
-      </div>
+
+          <button type="button" className={styles.auditButton}>
+            Full Audit Trail
+          </button>
+        </article>
+      </section>
     </section>
   );
-};
+}
