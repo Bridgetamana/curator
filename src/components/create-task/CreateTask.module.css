@@ -1,0 +1,83 @@
+.createTask {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.createTaskHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.createTaskTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.createTaskTitle {
+  font-size: var(--title);
+}
+
+.createTaskSubtitle {
+  font-size: var(--subtext);
+  color: var(--muted_text);
+}
+
+.createTaskForm {
+  width: 80%;
+  padding: 1.5rem;
+  background-color: var(--cards);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: 2rem;
+}
+
+.label {
+  display: block;
+  text-transform: uppercase;
+  color: var(--muted_text);
+  font-size: var(--label);
+  padding-bottom: 6px;
+}
+
+.titleInput,
+.descriptionInput {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0.35em;
+  outline-color: var(--primary);
+  border: 1px solid var(--secondary);
+  color: var(--tertiary);
+}
+
+.formSelectGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: start;
+}
+
+.taskPriority {
+  width: 100%;
+}
+
+.saveTask {
+  display: flex;
+  justify-content: end;
+  margin-top: 1.5rem;
+}
+
+.saveTaskButton {
+  padding: 8px;
+  width: 120px;
+  background-color: var(--primary);
+  border-radius: var(--radius);
+  font-size: var(--label);
+}

@@ -48,15 +48,18 @@
 }
 
 .createTaskButton {
-  display: flex;
-  justify-content: center;
   padding: 0.5rem;
   width: 100%;
-  gap: var(--spacing-sm);
   border-radius: var(--radius);
   text-transform: uppercase;
   background-color: var(--primary);
   font-size: var(--label);
+}
+
+.createTaskLink {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
 }
 
 .userPanel {

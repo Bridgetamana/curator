@@ -4,8 +4,8 @@ import Header from "./components/header/Header";
 import Dashboard from "./components/dashboard/Dashboard";
 import Board from "./components/board/Board";
 import List from "./components/list/List";
-import Projects from "./components/projects/Projects";
 import Setting from "./components/setting/Setting";
+import CreateTask from "./components/create-task/CreateTask";
 
 function AppLayout() {
   return (
@@ -45,8 +45,8 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="board" element={<Board />} />
         <Route path="list" element={<List />} />
-        <Route path="projects" element={<Projects />} />
         <Route path="settings" element={<Setting />} />
+        <Route path="create-task" element={<CreateTask />} />
       </Route>
     </Routes>
   );

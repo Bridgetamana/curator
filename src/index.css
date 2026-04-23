@@ -61,7 +61,8 @@ img {
 
 input,
 button,
-select {
+select,
+textarea {
   font: inherit;
 }
 
