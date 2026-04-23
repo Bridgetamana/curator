@@ -75,11 +75,6 @@ a {
   display: grid;
   min-height: 100dvh;
   grid-template-columns: 220px minmax(0, 1fr);
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto minmax(0, 1fr);
-  }
 }
 
 .content {
@@ -107,4 +102,10 @@ main {
   bottom: 0;
   right: 0;
   margin: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .appLayout {
+    grid-template-columns: 1fr;
+  }
 }

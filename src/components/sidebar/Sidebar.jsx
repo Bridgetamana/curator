@@ -1,5 +1,4 @@
 import styles from "./Sidebar.module.css";
-import avatar from "../../assets/avatar.webp";
 import { NavLink } from "react-router";
 
 export default function Sidebar() {
@@ -86,7 +85,7 @@ export default function Sidebar() {
 
         <nav>
           <ul className={styles.navList}>
-            {navList.slice(0, 3).map((item) => (
+            {navList.map((item) => (
               <li className={styles.navItem} key={item.id}>
                 <NavLink
                   to={item.path}
@@ -125,36 +124,6 @@ export default function Sidebar() {
             Create Task
           </NavLink>
         </button>
-
-        <nav aria-label="Secondary">
-          <ul className={styles.navList}>
-            {navList.slice(3, 4).map((item) => (
-              <li className={styles.navItem} key={item.id}>
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.navLink} ${styles.navLinkActive}`
-                      : styles.navLink
-                  }
-                >
-                  {item.icon}
-                  {item.title}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className={styles.userPanel}>
-          <div className={styles.userAvatar}>
-            <img src={avatar} alt="Arthur Vance" />
-          </div>
-          <div>
-            <p className={styles.userName}>Arthur Vance</p>
-            <p className={styles.userRole}>Director</p>
-          </div>
-        </div>
       </div>
     </aside>
   );

@@ -4,6 +4,23 @@ import avatar from "../../assets/avatar.webp";
 export default function Header() {
   return (
     <header className={styles.appHeader}>
+      <button className={styles.openSidebarButton} aria-label="open sidebar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          width={18}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+
       <form
         className={styles.searchForm}
         role="search"
@@ -25,8 +42,8 @@ export default function Header() {
         <input
           className={styles.searchInput}
           type="search"
-          placeholder="Search focus sessions"
-          aria-label="Search focus sessions"
+          placeholder="Search..."
+          aria-label="Search..."
         />
       </form>
 
@@ -70,7 +87,7 @@ export default function Header() {
             </svg>
           </button>
         </div>
-        <div className={styles.profileAvatar}>
+        <div className={styles.userAvatar}>
           <img src={avatar} alt="Arthur Vance" />
         </div>
       </div>

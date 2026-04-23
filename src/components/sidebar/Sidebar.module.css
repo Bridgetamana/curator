@@ -21,13 +21,13 @@
 .brand {
   font-weight: 600;
   font-size: 20px;
+  margin-bottom: 1.75rem;
 }
 
 .navList {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  margin: 1.75rem 0;
 }
 
 .navLink {
@@ -62,26 +62,8 @@
   gap: var(--spacing-sm);
 }
 
-.userPanel {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--label);
-}
-
-.userAvatar {
-  flex: 0 0 auto;
-  border-radius: 50%;
-  border: 1px solid var(--main_text);
-  overflow: hidden;
-  width: 2rem;
-  aspect-ratio: 1 / 1;
-}
-
-.userName {
-  font-weight: 600;
-}
-
-.userRole {
-  color: var(--subtext);
+@media (max-width: 786px) {
+  .sidebar {
+    display: none;
+  }
 }

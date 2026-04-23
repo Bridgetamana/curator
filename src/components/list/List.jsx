@@ -1,7 +1,19 @@
 import styles from "./List.module.css";
 import avatar from "../../assets/avatar.webp";
+import { useState } from "react";
+import TaskDetail from "../task-detail/TaskDetail";
 
 export default function List() {
+  const [isTaskDetailVisible, setIsTaskDetailVisible] = useState(false);
+
+  const openTaskDetail = () => {
+    setIsTaskDetailVisible(true);
+  };
+
+  const closeTaskDetail = () => {
+    setIsTaskDetailVisible(false);
+  };
+
   return (
     <section className={styles.list}>
       <header className={styles.listHeader}>
@@ -39,9 +51,9 @@ export default function List() {
               />
             </td>
             <td>
-              <a className={styles.taskLink} href="/tasks/1">
+              <button className={styles.taskLink} onClick={openTaskDetail}>
                 Architectural Blueprint Refinement
-              </a>
+              </button>
             </td>
             <td>Project Hailmary</td>
             <td>
@@ -65,9 +77,9 @@ export default function List() {
               />
             </td>
             <td>
-              <a className={styles.taskLink} href="/tasks/1">
+              <button className={styles.taskLink} onClick={openTaskDetail}>
                 Architectural Blueprint Refinement
-              </a>
+              </button>
             </td>
             <td>Project Hailmary</td>
             <td>
@@ -91,9 +103,9 @@ export default function List() {
               />
             </td>
             <td>
-              <a className={styles.taskLink} href="/tasks/1">
+              <button className={styles.taskLink} onClick={openTaskDetail}>
                 Architectural Blueprint Refinement
-              </a>
+              </button>
             </td>
             <td>Project Hailmary</td>
             <td>
@@ -111,6 +123,7 @@ export default function List() {
           </tr>
         </tbody>
       </table>
+      {isTaskDetailVisible && <TaskDetail onClose={closeTaskDetail} />}
     </section>
   );
 }
