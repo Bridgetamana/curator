@@ -1,5 +1,5 @@
-import styles from "./Sidebar.module.css";
 import { NavLink } from "react-router";
+import styles from "./Sidebar.module.css";
 
 export default function Sidebar({ isOpen, onClose }) {
   const navList = [
@@ -59,8 +59,8 @@ export default function Sidebar({ isOpen, onClose }) {
     },
     {
       id: 4,
-      title: "Settings",
-      path: "settings",
+      title: "Setting",
+      path: "setting",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
-import styles from "./Dashboard.module.css";
-import { BarChart, Bar } from "recharts";
+import { Bar, BarChart } from "recharts";
 import avatar from "../../assets/avatar.webp";
+import styles from "./Dashboard.module.css";
 
 export default function Dashboard() {
   const momentumData = [
