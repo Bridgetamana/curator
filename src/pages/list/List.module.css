@@ -70,15 +70,30 @@
   color: rgb(255, 91, 91);
 }
 
-.assigneeCell {
+.avatarStack {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.assigneeImage img {
-  width: 1.5rem;
+.avatarStack img {
+  width: 1.75rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid var(--cards);
+  flex: 0 0 auto;
+}
+
+.avatarStack img + img {
+  margin-left: -0.5rem;
+}
+
+.emptyState {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: #000;
+  color: var(--muted_text);
+  font-size: var(--subtext);
+  text-align: center;
 }

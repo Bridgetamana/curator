@@ -121,11 +121,22 @@
   color: var(--muted_text);
 }
 
-.assigneeImage {
-  width: 1.5rem;
+.avatarStack {
+  display: flex;
+  align-items: center;
+}
+
+.avatarStack img {
+  width: 1.75rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid var(--cards);
+  flex: 0 0 auto;
+}
+
+.avatarStack img + img {
+  margin-left: -0.5rem;
 }
 
 @media (max-width: 960px) {

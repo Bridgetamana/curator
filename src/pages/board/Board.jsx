@@ -3,6 +3,48 @@ import avatar from "../../assets/avatar.webp";
 import styles from "./Board.module.css";
 
 export default function Board() {
+  const taskList = [
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [{ name: "Jane D", avatar }],
+      status: "todo",
+    },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+      ],
+      status: "todo",
+    },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+      ],
+      status: "inprogress",
+    },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+      ],
+      status: "completed",
+    },
+  ];
+
   return (
     <section className={styles.board}>
       <header className={styles.boardHeader}>
@@ -44,54 +86,28 @@ export default function Board() {
           </header>
 
           <ul className={styles.cardList}>
-            <li>
-              <a href="#" className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </a>
-            </li>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
+            {taskList.filter((task) => task.status === "todo").map((task) => (
+                <li>
+                  <a href="#" className={styles.card}>
+                    <p className={styles.cardTag}>{task.tag}</p>
+                    <h3 className={styles.cardTitle}>{task.name}</h3>
+                    <footer className={styles.cardMeta}>
+                      <time dateTime="2026-10-24" className={styles.cardDue}>
+                        {task.due}
+                      </time>
+                      <div className={styles.avatarStack}>
+                        {task.assignees.map((assignee) => (
+                          <img
+                            key={assignee.name}
+                            src={assignee.avatar}
+                            alt={assignee.name}
+                          />
+                        ))}
+                      </div>
+                    </footer>
+                  </a>
+                </li>
+              ))}
           </ul>
         </article>
 
@@ -123,54 +139,30 @@ export default function Board() {
           </header>
 
           <ul className={styles.cardList}>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
+            {taskList
+              .filter((task) => task.status === "inprogress")
+              .map((task) => (
+                <li>
+                  <a href="#" className={styles.card}>
+                    <p className={styles.cardTag}>{task.tag}</p>
+                    <h3 className={styles.cardTitle}>{task.name}</h3>
+                    <footer className={styles.cardMeta}>
+                      <time dateTime="2026-10-24" className={styles.cardDue}>
+                        {task.due}
+                      </time>
+                      <div className={styles.avatarStack}>
+                        {task.assignees.map((assignee) => (
+                          <img
+                            key={assignee.name}
+                            src={assignee.avatar}
+                            alt={assignee.name}
+                          />
+                        ))}
+                      </div>
+                    </footer>
+                  </a>
+                </li>
+              ))}
           </ul>
         </article>
 
@@ -202,54 +194,30 @@ export default function Board() {
           </header>
 
           <ul className={styles.cardList}>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
-            <li>
-              <article className={styles.card}>
-                <p className={styles.cardTag}>Editorial</p>
-                <h3 className={styles.cardTitle}>Refine brand guidelines</h3>
-                <footer className={styles.cardMeta}>
-                  <time dateTime="2026-10-24" className={styles.cardDue}>
-                    Oct 24
-                  </time>
-                  <img
-                    src={avatar}
-                    alt="Mary L."
-                    className={styles.assigneeImage}
-                  />
-                </footer>
-              </article>
-            </li>
+            {taskList
+              .filter((task) => task.status === "completed")
+              .map((task) => (
+                <li>
+                  <a href="#" className={styles.card}>
+                    <p className={styles.cardTag}>{task.tag}</p>
+                    <h3 className={styles.cardTitle}>{task.name}</h3>
+                    <footer className={styles.cardMeta}>
+                      <time dateTime="2026-10-24" className={styles.cardDue}>
+                        {task.due}
+                      </time>
+                      <div className={styles.avatarStack}>
+                        {task.assignees.map((assignee) => (
+                          <img
+                            key={assignee.name}
+                            src={assignee.avatar}
+                            alt={assignee.name}
+                          />
+                        ))}
+                      </div>
+                    </footer>
+                  </a>
+                </li>
+              ))}
           </ul>
         </article>
       </div>

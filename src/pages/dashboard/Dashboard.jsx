@@ -1,27 +1,59 @@
-import avatar from "../../assets/avatar.webp";
+// import avatar from "../../assets/avatar.webp";
 import styles from "./Dashboard.module.css";
 
 export default function Dashboard() {
   const taskOverview = [
-    { label: "Due today", value: "4" },
-    { label: "In progress", value: "9" },
-    { label: "Completed this week", value: "16" },
+    // { label: "Due today", value: "4" },
+    // { label: "In progress", value: "9" },
+    // { label: "Completed this week", value: "16" },
   ];
 
   const recentActions = [
-    {
-      text: "You created Atelier Rebrand 2024.",
-      time: "24 minutes ago",
-    },
-    {
-      text: "You moved Digital Publication Q3 to Planning.",
-      time: "2 hours ago",
-    },
-    {
-      text: "You updated the priority for Art Direction Guide.",
-      time: "Yesterday",
-    },
+    // {
+    //   text: "You created Atelier Rebrand 2024.",
+    //   time: "24 minutes ago",
+    // },
+    // {
+    //   text: "You moved Digital Publication Q3 to Planning.",
+    //   time: "2 hours ago",
+    // },
+    // {
+    //   text: "You updated the priority for Art Direction Guide.",
+    //   time: "Yesterday",
+    // },
   ];
+
+  const activeTasks = [
+    // {
+    //   name: "Atelier Rebrand 2024",
+    //   priority: "High",
+    //   due: 4,
+    //   assignees: [
+    //     { name: "Mary L", avatar },
+    //   ],
+    // },
+    // {
+    //   name: "Digital Publication Q3",
+    //   priority: "Medium",
+    //   due: 12,
+    //   assignees: [
+    //     { name: "John L", avatar },
+    //     { name: "Mary L", avatar },
+    //   ],
+    // },
+    // {
+    //   name: "Art Direction Guide",
+    //   priority: "Low",
+    //   due: 1,
+    //   assignees: [
+    //     { name: "Jane D", avatar },
+    //   ],
+    // },
+  ];
+
+  const hasTaskOverview = taskOverview.length > 0;
+  const hasActiveTasks = activeTasks.length > 0;
+  const hasRecentActions = recentActions.length > 0;
 
   return (
     <section className={styles.dashboard}>
@@ -42,14 +74,20 @@ export default function Dashboard() {
             </p>
           </div>
 
-          <ul className={styles.overviewList}>
-            {taskOverview.map((item) => (
-              <li key={item.label} className={styles.overviewItem}>
-                <span className={styles.overviewValue}>{item.value}</span>
-                <span className={styles.overviewLabel}>{item.label}</span>
-              </li>
-            ))}
-          </ul>
+          {hasTaskOverview ? (
+            <ul className={styles.overviewList}>
+              {taskOverview.map((item) => (
+                <li key={item.label} className={styles.overviewItem}>
+                  <span className={styles.overviewValue}>{item.value}</span>
+                  <span className={styles.overviewLabel}>{item.label}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className={styles.emptyState}>
+              No summary yet. Add tasks to see your workspace stats here.
+            </p>
+          )}
         </article>
       </section>
 
@@ -59,109 +97,38 @@ export default function Dashboard() {
             <h2 className={styles.projectsTitle}>Active Tasks</h2>
           </header>
 
-          <ul className={styles.projectList}>
-            <li className={styles.projectItem}>
-              <div className={styles.projectMain}>
-                <div className={styles.projectIcon}>
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width={18}
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M8.128 9.155a3.751 3.751 0 1 1 .713-1.321l1.136.656a.75.75 0 0 1 .222 1.104l-.006.007a.75.75 0 0 1-1.032.157 1.421 1.421 0 0 0-.113-.072l-.92-.531Zm-4.827-3.53a2.25 2.25 0 0 1 3.994 2.063.756.756 0 0 0-.122.23 2.25 2.25 0 0 1-3.872-2.293ZM13.348 8.272a5.073 5.073 0 0 0-3.428 3.57 5.08 5.08 0 0 0-.165 1.202 1.415 1.415 0 0 1-.707 1.201l-.96.554a3.751 3.751 0 1 0 .734 1.309l13.729-7.926a.75.75 0 0 0-.181-1.374l-.803-.215a5.25 5.25 0 0 0-2.894.05l-5.325 1.629Zm-9.223 7.03a2.25 2.25 0 1 0 2.25 3.897 2.25 2.25 0 0 0-2.25-3.897ZM12 12.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                      clipRule="evenodd"
-                    />
-                    <path d="M16.372 12.615a.75.75 0 0 1 .75 0l5.43 3.135a.75.75 0 0 1-.182 1.374l-.802.215a5.25 5.25 0 0 1-2.894-.051l-5.147-1.574a.75.75 0 0 1-.156-1.367l3-1.732Z" />
-                  </svg>
-                </div>
-                <div className={styles.projectText}>
-                  <p className={styles.projectName}>Atelier Rebrand 2024</p>
-                  <p className={styles.projectMeta}>
-                    High Intensity . Due in 4 days
-                  </p>
-                </div>
-              </div>
-              <div className={styles.projectStatus}>
-                <div className={styles.avatarStack}>
-                  <img src={avatar} alt="Team member" />
-                  <img src={avatar} alt="Team member" />
-                </div>
-                <span className={styles.statusBadge}>In Progress</span>
-              </div>
-            </li>
-
-            <li className={styles.projectItem}>
-              <div className={styles.projectMain}>
-                <div className={styles.projectIcon}>
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    width={18}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
-                    />
-                  </svg>
-                </div>
-                <div className={styles.projectText}>
-                  <p className={styles.projectName}>Digital Publication Q3</p>
-                  <p className={styles.projectMeta}>
-                    Medium Intensity . Due in 12 days
-                  </p>
-                </div>
-              </div>
-              <div className={styles.projectStatus}>
-                <div className={styles.avatarStack}>
-                  <img src={avatar} alt="Team member" />
-                </div>
-                <span className={styles.statusBadge}>Planning</span>
-              </div>
-            </li>
-
-            <li className={styles.projectItem}>
-              <div className={styles.projectMain}>
-                <div className={styles.projectIcon}>
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    width={18}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
-                    />
-                  </svg>
-                </div>
-                <div className={styles.projectText}>
-                  <p className={styles.projectName}>Art Direction Guide</p>
-                  <p className={styles.projectMeta}>Low Intensity . Internal</p>
-                </div>
-              </div>
-              <div className={styles.projectStatus}>
-                <div className={styles.avatarStack}>
-                  <img src={avatar} alt="Team member" />
-                  <img src={avatar} alt="Team member" />
-                  <img src={avatar} alt="Team member" />
-                </div>
-                <span className={styles.statusBadge}>Review</span>
-              </div>
-            </li>
-          </ul>
+          {hasActiveTasks ? (
+            <ul className={styles.projectList}>
+              {activeTasks.map((task) => (
+                <li className={styles.projectItem} key={task.name}>
+                  <div className={styles.projectMain}>
+                    <div className={styles.projectText}>
+                      <p className={styles.projectName}>{task.name}</p>
+                      <span className={styles.projectMeta}>
+                        {task.priority} . Due in {task.due} days
+                      </span>
+                    </div>
+                  </div>
+                  <div className={styles.projectStatus}>
+                    <div className={styles.avatarStack}>
+                      {task.assignees.map((assignee) => (
+                        <img
+                          key={assignee.name}
+                          src={assignee.avatar}
+                          alt={assignee.name}
+                        />
+                      ))}
+                    </div>
+                    <span className={styles.statusBadge}>In Progress</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className={styles.emptyState}>
+              No active tasks yet. Create one to get started.
+            </p>
+          )}
         </article>
 
         <article className={styles.activityPanel}>
@@ -169,17 +136,23 @@ export default function Dashboard() {
             <h2 className={styles.activityTitle}>Recent Activity</h2>
           </header>
 
-          <ul className={styles.activityList}>
-            {recentActions.map((item) => (
-              <li key={item.text} className={styles.activityItem}>
-                <span className={styles.activityDot} aria-hidden="true"></span>
-                <div className={styles.activityText}>
-                  <p>{item.text}</p>
-                  <p className={styles.activityTime}>{item.time}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          {hasRecentActions ? (
+            <ul className={styles.activityList}>
+              {recentActions.map((item) => (
+                <li key={item.text} className={styles.activityItem}>
+                  <span className={styles.activityDot} aria-hidden="true" />
+                  <div className={styles.activityText}>
+                    <p>{item.text}</p>
+                    <p className={styles.activityTime}>{item.time}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className={styles.emptyState}>
+              No recent activity yet. Your latest actions will appear here.
+            </p>
+          )}
         </article>
       </section>
     </section>

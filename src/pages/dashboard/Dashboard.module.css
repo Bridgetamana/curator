@@ -40,6 +40,16 @@
   color: var(--muted_text);
 }
 
+.emptyState {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: #000;
+  color: var(--muted_text);
+  font-size: var(--subtext);
+  text-align: center;
+}
+
 .overviewList {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

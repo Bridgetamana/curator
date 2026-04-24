@@ -111,7 +111,7 @@ export default function Sidebar({ isOpen, onClose }) {
               />
             </svg>
           </button>
-          <p className={styles.brand}>The Curator</p>
+          <p className={styles.brand}>Arthurs Workspace</p>
 
           <nav>
             <ul className={styles.navList}>
