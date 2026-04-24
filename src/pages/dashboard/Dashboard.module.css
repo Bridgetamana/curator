@@ -10,7 +10,6 @@
 
 .greetingTitle {
   font-size: 2rem;
-  font-weight: 600;
 }
 
 .greetingText {
@@ -34,7 +33,6 @@
 
 .cardTitle {
   font-size: 1.25rem;
-  font-weight: 600;
 }
 
 .cardSubtitle {
@@ -60,7 +58,6 @@
 
 .overviewValue {
   font-size: 2rem;
-  font-weight: 600;
 }
 
 .overviewLabel {
@@ -82,13 +79,10 @@
 }
 
 .projectsHeader {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .projectsTitle {
-  font-weight: 600;
   font-size: 18px;
 }
 
@@ -99,16 +93,12 @@
 }
 
 .projectItem {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-inline: 12px;
 }
 
 .projectMain {
-  display: flex;
   gap: var(--spacing-md);
-  align-items: center;
 }
 
 .projectIcon {
@@ -125,7 +115,13 @@
   gap: 2px;
 }
 
-.projectName {
+.projectName,
+.projectsTitle,
+.overviewValue,
+.cardTitle,
+.greetingTitle,
+.activityTitle,
+.statusBadge {
   font-weight: 600;
 }
 
@@ -135,12 +131,15 @@
 }
 
 .projectStatus {
-  display: flex;
-  align-items: center;
   gap: var(--spacing-lg);
 }
 
-.avatarStack {
+.avatarStack,
+.projectStatus,
+.projectsHeader,
+.projectItem,
+.projectMain,
+.activityHeader {
   display: flex;
   align-items: center;
 }
@@ -161,7 +160,6 @@
 .statusBadge {
   text-transform: uppercase;
   font-size: var(--label);
-  font-weight: 600;
   padding: 6px;
   background-color: var(--cards);
   border-radius: var(--radius);
@@ -178,13 +176,10 @@
 }
 
 .activityHeader {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .activityTitle {
-  font-weight: 600;
   font-size: 18px;
 }
 
