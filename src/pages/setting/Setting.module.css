@@ -26,3 +26,65 @@
   font-size: var(--subtext);
   color: var(--muted_text);
 }
+
+.settingForm {
+  width: 80%;
+  padding: 1.5rem;
+  background-color: var(--cards);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: 2rem;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  text-transform: uppercase;
+  color: var(--muted_text);
+  font-size: var(--label);
+  padding-bottom: 6px;
+}
+
+.textInput,
+.selectInput {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0.35em;
+  outline-color: var(--primary);
+  border: 1px solid var(--secondary);
+  color: var(--tertiary);
+  min-height: 34px;
+}
+
+.saveSetting {
+  display: flex;
+  justify-content: end;
+  margin-top: 1.5rem;
+}
+
+.saveSettingButton {
+  padding: 8px;
+  min-width: 140px;
+  background-color: var(--primary);
+  border-radius: var(--radius);
+  font-size: var(--label);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .settingForm {
+    width: 100%;
+  }
+
+  .formSelectGroup {
+    grid-template-columns: 1fr;
+  }
+}

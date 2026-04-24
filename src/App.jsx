@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router";
 import AppLayout from "./app/AppLayout";
 import Board from "./pages/board/Board";
 import CreateTask from "./pages/create-task/CreateTask";
