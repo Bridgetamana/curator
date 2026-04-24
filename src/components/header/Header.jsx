@@ -1,10 +1,15 @@
 import styles from "./Header.module.css";
 import avatar from "../../assets/avatar.webp";
 
-export default function Header() {
+export default function Header({ onOpenSidebar }) {
+
   return (
     <header className={styles.appHeader}>
-      <button className={styles.openSidebarButton} aria-label="open sidebar">
+      <button
+        className={styles.openSidebarButton}
+        aria-label="open sidebar"
+        onClick={onOpenSidebar}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

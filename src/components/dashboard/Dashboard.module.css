@@ -267,3 +267,38 @@
   font-size: var(--subtext);
   border-radius: var(--radius);
 }
+
+@media (max-width: 768px) {
+  .greetingTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .reportGrid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .momentumCard {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .focusCard {
+    width: 100%;
+  }
+
+  .bottomGrid {
+    flex-direction: column;
+  }
+
+  .projectsPanel {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .activityPanel {
+    width: 100%;
+  }
+}

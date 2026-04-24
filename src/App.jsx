@@ -1,4 +1,5 @@
 import { Routes, Route, Outlet } from "react-router-dom";
+import { useState } from "react";
 import Sidebar from "./components/sidebar/Sidebar";
 import Header from "./components/header/Header";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -8,11 +9,16 @@ import Setting from "./components/setting/Setting";
 import CreateTask from "./components/create-task/CreateTask";
 
 function AppLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="appLayout">
-      <Sidebar />
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       <div className="content">
-        <Header />
+        <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
         <main>
           <Outlet />
         </main>

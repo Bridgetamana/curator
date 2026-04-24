@@ -1,7 +1,7 @@
 import styles from "./Sidebar.module.css";
 import { NavLink } from "react-router";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const navList = [
     {
       id: 1,
@@ -79,34 +79,23 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className={styles.sidebar}>
-      <div className={styles.sidebarTop}>
-        <p className={styles.brand}>The Curator</p>
+    <>
+      <div
+        className={`${styles.backdrop} ${isOpen ? styles.backdropOpen : ""}`}
+        onClick={onClose}
+        aria-hidden="true"
+      ></div>
 
-        <nav>
-          <ul className={styles.navList}>
-            {navList.map((item) => (
-              <li className={styles.navItem} key={item.id}>
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.navLink} ${styles.navLinkActive}`
-                      : styles.navLink
-                  }
-                >
-                  {item.icon}
-                  {item.title}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-
-      <div className={styles.sidebarBottom}>
-        <button type="button" className={styles.createTaskButton}>
-          <NavLink to="create-task" className={styles.createTaskLink}>
+      <aside
+        className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ""}`}
+      >
+        <div className={styles.sidebarTop}>
+          <button
+            type="button"
+            className={styles.closeButton}
+            aria-label="Close sidebar"
+            onClick={onClose}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -118,13 +107,60 @@ export default function Sidebar() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M12 4.5v15m7.5-7.5h-15"
+                d="M6 18 18 6M6 6l12 12"
               />
             </svg>
-            Create Task
-          </NavLink>
-        </button>
-      </div>
-    </aside>
+          </button>
+          <p className={styles.brand}>The Curator</p>
+
+          <nav>
+            <ul className={styles.navList}>
+              {navList.map((item) => (
+                <li className={styles.navItem} key={item.id}>
+                  <NavLink
+                    to={item.path}
+                    onClick={onClose}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.navLink} ${styles.navLinkActive}`
+                        : styles.navLink
+                    }
+                  >
+                    {item.icon}
+                    {item.title}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className={styles.sidebarBottom}>
+          <button type="button" className={styles.createTaskButton}>
+            <NavLink
+              to="create-task"
+              className={styles.createTaskLink}
+              onClick={onClose}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                width={18}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+              Create Task
+            </NavLink>
+          </button>
+        </div>
+      </aside>
+    </>
   );
 }
