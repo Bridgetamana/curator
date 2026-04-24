@@ -27,11 +27,6 @@
   color: var(--muted_text);
 }
 
-.listActions {
-  display: flex;
-  gap: var(--spacing-sm);
-}
-
 .listAction {
   border-radius: 0.5rem;
   background: var(--secondary);

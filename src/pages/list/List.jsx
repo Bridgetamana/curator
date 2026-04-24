@@ -23,10 +23,7 @@ export default function List() {
             Organize your deep work sessions
           </p>
         </div>
-        <div className={styles.listActions}>
-          <button className={styles.listAction}>Filter</button>
-          <button className={styles.listAction}>Export</button>
-        </div>
+        <button className={styles.listAction}>Export List</button>
       </header>
 
       <table className={styles.listView}>

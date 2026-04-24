@@ -1,16 +1,26 @@
-import { Bar, BarChart } from "recharts";
 import avatar from "../../assets/avatar.webp";
 import styles from "./Dashboard.module.css";
 
 export default function Dashboard() {
-  const momentumData = [
-    { day: "Mon", focusHours: 4.2 },
-    { day: "Tue", focusHours: 5.8 },
-    { day: "Wed", focusHours: 3.6 },
-    { day: "Thu", focusHours: 8.1 },
-    { day: "Fri", focusHours: 5.4 },
-    { day: "Sat", focusHours: 4.1 },
-    { day: "Sun", focusHours: 1.3 },
+  const taskOverview = [
+    { label: "Due today", value: "4" },
+    { label: "In progress", value: "9" },
+    { label: "Completed this week", value: "16" },
+  ];
+
+  const recentActions = [
+    {
+      text: "You created Atelier Rebrand 2024.",
+      time: "24 minutes ago",
+    },
+    {
+      text: "You moved Digital Publication Q3 to Planning.",
+      time: "2 hours ago",
+    },
+    {
+      text: "You updated the priority for Art Direction Guide.",
+      time: "Yesterday",
+    },
   ];
 
   return (
@@ -23,49 +33,22 @@ export default function Dashboard() {
         </p>
       </header>
 
-      <section className={styles.reportGrid} aria-label="Performance reports">
-        <article className={styles.momentumCard}>
-          <p className={styles.cardNotice}>Velocity report</p>
-          <div className={styles.momentumContent}>
-            <h2 className={styles.cardTitle}>Deep Work Momentum</h2>
+      <section className={styles.reportGrid} aria-label="Task overview">
+        <article className={styles.overviewCard}>
+          <div className={styles.overviewContent}>
+            <h2 className={styles.cardTitle}>Task Overview</h2>
             <p className={styles.cardSubtitle}>
-              82% of weekly objectives achieved
+              A quick look at what needs attention right now.
             </p>
           </div>
-          <div className={styles.chartWrap}>
-            <BarChart
-              style={{
-                width: "100%",
-                maxWidth: "500px",
-                maxHeight: "150px",
-                aspectRatio: 1.618,
-              }}
-              responsive
-              data={momentumData}
-            >
-              <Bar dataKey="focusHours" fill="#53834e" />
-            </BarChart>
-          </div>
-        </article>
 
-        <article className={styles.focusCard}>
-          <div>
-            <p className={styles.focusLabel}>Focus Time</p>
-            <p className={styles.focusTotal}>32.5hrs</p>
-          </div>
-          <ul className={styles.focusBreakdown}>
-            <li className={styles.focusBreakdownItem}>
-              <p className={styles.focusCategory}>Architecture</p>
-              <p className={styles.focusHours}>12h</p>
-            </li>
-            <li className={styles.focusBreakdownItem}>
-              <p className={styles.focusCategory}>Editorial Strategy</p>
-              <p className={styles.focusHours}>14h</p>
-            </li>
-            <li className={styles.focusBreakdownItem}>
-              <p className={styles.focusCategory}>Curation</p>
-              <p className={styles.focusHours}>6.5h</p>
-            </li>
+          <ul className={styles.overviewList}>
+            {taskOverview.map((item) => (
+              <li key={item.label} className={styles.overviewItem}>
+                <span className={styles.overviewValue}>{item.value}</span>
+                <span className={styles.overviewLabel}>{item.label}</span>
+              </li>
+            ))}
           </ul>
         </article>
       </section>
@@ -73,10 +56,7 @@ export default function Dashboard() {
       <section className={styles.bottomGrid}>
         <article className={styles.projectsPanel}>
           <header className={styles.projectsHeader}>
-            <h2 className={styles.projectsTitle}>Active Projects</h2>
-            <button type="button" className={styles.ledgerButton}>
-              View Ledger
-            </button>
+            <h2 className={styles.projectsTitle}>Active Tasks</h2>
           </header>
 
           <ul className={styles.projectList}>
@@ -186,36 +166,20 @@ export default function Dashboard() {
 
         <article className={styles.activityPanel}>
           <header className={styles.activityHeader}>
-            <h2 className={styles.activityTitle}>Activity Log</h2>
+            <h2 className={styles.activityTitle}>Recent Activity</h2>
           </header>
 
           <ul className={styles.activityList}>
-            <li className={styles.activityItem}>
-              <span className={styles.activityDot} aria-hidden="true"></span>
-              <div className={styles.activityText}>
-                <p>Julianne S. approved the Design Tokens draft.</p>
-                <p className={styles.activityTime}>24 minutes ago</p>
-              </div>
-            </li>
-            <li className={styles.activityItem}>
-              <span className={styles.activityDot} aria-hidden="true"></span>
-              <div className={styles.activityText}>
-                <p>New focus session recorded: 3h 45m in Atelier Workspace.</p>
-                <p className={styles.activityTime}>2 hours ago</p>
-              </div>
-            </li>
-            <li className={styles.activityItem}>
-              <span className={styles.activityDot} aria-hidden="true"></span>
-              <div className={styles.activityText}>
-                <p>Liam W. commented on Task #102: Typography Scales.</p>
-                <p className={styles.activityTime}>Yesterday</p>
-              </div>
-            </li>
+            {recentActions.map((item) => (
+              <li key={item.text} className={styles.activityItem}>
+                <span className={styles.activityDot} aria-hidden="true"></span>
+                <div className={styles.activityText}>
+                  <p>{item.text}</p>
+                  <p className={styles.activityTime}>{item.time}</p>
+                </div>
+              </li>
+            ))}
           </ul>
-
-          <button type="button" className={styles.auditButton}>
-            Full Audit Trail
-          </button>
         </article>
       </section>
     </section>

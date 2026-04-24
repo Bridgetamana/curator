@@ -22,24 +22,14 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: var(--spacing-md);
 }
 
-.momentumCard {
-  width: 55%;
+.overviewCard {
+  width: 100%;
   background-color: var(--cards);
   border-radius: var(--radius);
   padding: 1rem 1.5rem;
-}
-
-.cardNotice {
-  color: var(--primary);
-  text-transform: uppercase;
-  font-size: var(--label);
-  font-weight: 600;
-}
-
-.momentumContent {
-  margin-block: 1rem;
 }
 
 .cardTitle {
@@ -52,52 +42,28 @@
   color: var(--muted_text);
 }
 
-.chartWrap {
-  width: 100%;
-}
-
-.focusCard {
-  width: 30%;
-  background-color: var(--cards);
-  border-radius: var(--radius);
-  padding: 1rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.focusLabel {
-  font-size: var(--label);
-  text-transform: uppercase;
-  color: var(--muted_text);
-}
-
-.focusTotal {
-  font-size: var(--title);
-  font-weight: 600;
-  margin-top: 0.75rem;
-}
-
-.focusBreakdown {
-  display: flex;
-  flex-direction: column;
+.overviewList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--spacing-lg);
+  margin-top: 1rem;
 }
 
-.focusBreakdownItem {
+.overviewItem {
+  padding: 0.85rem;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: var(--bg);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #2b2b2b;
-  padding-bottom: 4px;
+  flex-direction: column;
 }
 
-.focusCategory {
-  color: var(--muted_text);
-  font-size: var(--label);
+.overviewValue {
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-.focusHours {
+.overviewLabel {
   font-size: var(--label);
 }
 
@@ -124,12 +90,6 @@
 .projectsTitle {
   font-weight: 600;
   font-size: 18px;
-}
-
-.ledgerButton {
-  color: var(--primary);
-  text-transform: uppercase;
-  font-size: var(--subtext);
 }
 
 .projectList {
@@ -228,6 +188,10 @@
   font-size: 18px;
 }
 
+.activityText p:first-child {
+  font-size: var(--subtext);
+}
+
 .activityList {
   display: flex;
   flex-direction: column;
@@ -248,24 +212,11 @@
   flex: 0 0 auto;
 }
 
-.activityText p:first-child {
-  font-size: var(--subtext);
-}
-
 .activityTime {
   text-transform: uppercase;
   font-size: var(--label);
   color: var(--muted_text);
   margin-top: 4px;
-}
-
-.auditButton {
-  padding: 6px;
-  background-color: var(--cards);
-  color: var(--main_text);
-  text-transform: uppercase;
-  font-size: var(--subtext);
-  border-radius: var(--radius);
 }
 
 @media (max-width: 768px) {
@@ -280,13 +231,13 @@
     flex-direction: column;
   }
 
-  .momentumCard {
+  .overviewCard {
     width: 100%;
     margin-bottom: 1.5rem;
   }
 
-  .focusCard {
-    width: 100%;
+  .overviewList {
+    grid-template-columns: 1fr;
   }
 
   .bottomGrid {
