@@ -1,6 +1,23 @@
+import { useState } from "react";
 import styles from "./Setting.module.css";
 
 export default function Setting() {
+  const [formData, setFormData] = useState({
+    name: "",
+    role: "",
+    weekStartsOn: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+  };
+
   return (
     <section className={styles.setting}>
       <header className={styles.settingHeader}>
@@ -12,18 +29,20 @@ export default function Setting() {
         </div>
       </header>
 
-      <form className={styles.settingForm}>
+      <form className={styles.settingForm} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="display-name" className={styles.label}>
             Display Name
           </label>
           <input
             id="display-name"
-            name="displayName"
+            name="name"
             type="text"
             className={styles.textInput}
             placeholder="Your name"
             required
+            value={formData.name}
+            onChange={handleChange}
           />
         </div>
 
@@ -37,6 +56,8 @@ export default function Setting() {
             type="text"
             className={styles.textInput}
             placeholder="Your role"
+            value={formData.role}
+            onChange={handleChange}
           />
         </div>
 
@@ -48,6 +69,8 @@ export default function Setting() {
             id="week-starts-on"
             name="weekStartsOn"
             className={styles.selectInput}
+            value={formData.weekStartsOn}
+            onChange={handleChange}
           >
             <option value="monday">Monday</option>
             <option value="sunday">Sunday</option>
