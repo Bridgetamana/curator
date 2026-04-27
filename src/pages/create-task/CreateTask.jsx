@@ -1,6 +1,26 @@
+import { useState } from "react";
 import styles from "./CreateTask.module.css";
 
 export default function CreateTask() {
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    priority: "",
+    dueDate: "",
+    assignee: "",
+    tag: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+  };
+
   return (
     <section>
       <header className={styles.createTaskHeader}>
@@ -12,7 +32,7 @@ export default function CreateTask() {
         </div>
       </header>
 
-      <form action="" className={styles.createTaskForm}>
+      <form action="" className={styles.createTaskForm} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="task-title" className={styles.label}>
             Title
@@ -21,6 +41,8 @@ export default function CreateTask() {
             type="text"
             id="task-title"
             name="title"
+            value={formData.title}
+            onChange={handleChange}
             className={styles.titleInput}
             placeholder="Task Name"
             required
@@ -36,6 +58,8 @@ export default function CreateTask() {
             rows="5"
             cols="20"
             placeholder="Add Description"
+            value={formData.description}
+            onChange={handleChange}
             className={styles.descriptionInput}
             required
           ></textarea>
@@ -49,6 +73,8 @@ export default function CreateTask() {
               name="priority"
               id="task-priority"
               className={styles.selectInput}
+              value={formData.priority}
+              onChange={handleChange}
             >
               <option value="urgent">Urgent</option>
               <option value="high">High</option>
@@ -62,9 +88,11 @@ export default function CreateTask() {
             </label>
             <input
               type="date"
-              name="duedate"
+              name="dueDate"
               id="task-duedate"
               className={styles.dateInput}
+              value={formData.dueDate}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -73,7 +101,13 @@ export default function CreateTask() {
             <label htmlFor="assignee" className={styles.label}>
               Assignee
             </label>
-            <select name="assignee" id="task-assignee" className={styles.selectInput}>
+            <select
+              name="assignee"
+              id="task-assignee"
+              className={styles.selectInput}
+              value={formData.assignee}
+              onChange={handleChange}
+            >
               <option value="mary">Mary L.</option>
               <option value="john">John S.</option>
             </select>
@@ -82,7 +116,13 @@ export default function CreateTask() {
             <label htmlFor="task-tag" className={styles.label}>
               Tag
             </label>
-            <select name="tag" id="task-tag" className={styles.selectInput}>
+            <select
+              name="tag"
+              id="task-tag"
+              className={styles.selectInput}
+              value={formData.tag}
+              onChange={handleChange}
+            >
               <option value="editorial">Editorial</option>
               <option value="marketing">Marketing</option>
               <option value="personal">Personal</option>
