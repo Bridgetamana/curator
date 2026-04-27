@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import avatar from "../../assets/avatar.webp";
+import ProfileDropdown from "../profile-dropdown/ProfileDropdown";
 
 export default function Header({ onOpenSidebar }) {
 
@@ -53,9 +53,7 @@ export default function Header({ onOpenSidebar }) {
       </form>
 
       <div className={styles.headerControls}>
-        <div className={styles.userAvatar}>
-          <img src={avatar} alt="Arthur Vance" />
-        </div>
+        <ProfileDropdown />
       </div>
     </header>
   );

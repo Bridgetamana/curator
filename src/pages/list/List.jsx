@@ -1,53 +1,53 @@
 import { useState } from "react";
-// import avatar from "../../assets/avatar.webp";
+import avatar from "../../assets/avatar.webp";
 import TaskDetail from "../../components/task-detail/TaskDetail";
 import styles from "./List.module.css";
 
 export default function List() {
   const taskList = [
-    // {
-    //   tag: "Editorial",
-    //   name: "Refine brand guidelines",
-    //   due: "Oct 24",
-    //   assignees: [{ name: "Jane D", avatar }],
-    //   status: "todo",
-    //   priority: "High",
-    // },
-    // {
-    //   tag: "Editorial",
-    //   name: "Refine brand guidelines",
-    //   due: "Oct 24",
-    //   assignees: [
-    //     { name: "Jane D", avatar },
-    //     { name: "Jane D", avatar },
-    //   ],
-    //   status: "todo",
-    //   priority: "High",
-    // },
-    // {
-    //   tag: "Editorial",
-    //   name: "Refine brand guidelines",
-    //   due: "Oct 24",
-    //   assignees: [
-    //     { name: "Jane D", avatar },
-    //     { name: "Jane D", avatar },
-    //     { name: "Jane D", avatar },
-    //   ],
-    //   status: "inprogress",
-    //   priority: "medium",
-    // },
-    // {
-    //   tag: "Editorial",
-    //   name: "Refine brand guidelines",
-    //   due: "Oct 24",
-    //   assignees: [
-    //     { name: "Jane D", avatar },
-    //     { name: "Jane D", avatar },
-    //     { name: "Jane D", avatar },
-    //   ],
-    //   status: "completed",
-    //   priority: "Low",
-    // },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [{ name: "Jane D", avatar }],
+      status: "todo",
+      priority: "High",
+    },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+      ],
+      status: "todo",
+      priority: "High",
+    },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+      ],
+      status: "inprogress",
+      priority: "medium",
+    },
+    {
+      tag: "Editorial",
+      name: "Refine brand guidelines",
+      due: "Oct 24",
+      assignees: [
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+        { name: "Jane D", avatar },
+      ],
+      status: "completed",
+      priority: "Low",
+    },
   ];
 
   const [isTaskDetailVisible, setIsTaskDetailVisible] = useState(false);

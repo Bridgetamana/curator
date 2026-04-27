@@ -1,9 +1,57 @@
 .taskDetail {
-    background-color: var(--cards);
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 40%;
+  background-color: var(--cards);
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+}
+
+.taskDetailActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskDetailActionLeft {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.status {
+  text-transform: uppercase;
+  background: var(--secondary);
+  color: #8fff80;
+  font-size: var(--label);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.priority {
+  display: flex;
+  gap: 3px;
+}
+
+.taskDetailHeader {
+  margin-block: 4rem;
+}
+
+.taskDetailTitle {
+  font-size: 2rem;
+}
+
+.taskDetailMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.metaTitle {
+    color: var(--muted-text);
+    font-size: var(--label);
+    text-transform: uppercase;
+    margin-bottom: 6px;
 }

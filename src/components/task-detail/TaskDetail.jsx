@@ -4,7 +4,7 @@ export default function TaskDetail({ onClose }) {
   return (
     <section className={styles.taskDetail}>
       <div className={styles.taskDetailActions}>
-        <div>
+        <div className={styles.taskDetailActionLeft}>
           <span className={styles.status}>In progress</span>
           <span className={styles.priority}>
             Priority:
@@ -31,27 +31,27 @@ export default function TaskDetail({ onClose }) {
         </div>
       </div>
       <div className={styles.taskDetailHeader}>
-        <h2>Define Brand Campaign</h2>
-        <div>
-          <div>
-            <p>Assignee</p>
+        <h2 className={styles.taskDetailTitle}>Define Brand Campaign</h2>
+        <div className={styles.taskDetailMeta}>
+          <div className={styles.assignee}>
+            <p className={styles.metaTitle}>Assignee</p>
             <div>
               <img src="" alt="" />
               Mary L.
             </div>
           </div>
-          <div>
-            <p>Due Date</p>
+          <div className={styles.dueDate}>
+            <p className={styles.metaTitle}>Due Date</p>
             <p>Oct 24. 2023</p>
           </div>
-          <div>
-            <p>Tag</p>
+          <div className={styles.tag}>
+            <p className={styles.metaTitle}>Tag</p>
             <span>Personal</span>
           </div>
         </div>
       </div>
       <div className={styles.taskDetailInfo}>
-        <p>Description</p>
+        <p className={styles.metaTitle}>Description</p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
           tenetur minus atque autem ad nihil omnis quaerat voluptates aut
