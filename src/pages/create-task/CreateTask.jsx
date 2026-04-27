@@ -48,7 +48,7 @@ export default function CreateTask() {
             <select
               name="priority"
               id="task-priority"
-              className={styles.taskPriority}
+              className={styles.selectInput}
             >
               <option value="urgent">Urgent</option>
               <option value="high">High</option>
@@ -56,11 +56,16 @@ export default function CreateTask() {
               <option value="low">Low</option>
             </select>
           </div>
-          <div>
+          <div className={styles.formGroup}>
             <label htmlFor="task-duedate" className={styles.label}>
               Due Date
             </label>
-            <input type="date" name="duedate" id="task-duedate" />
+            <input
+              type="date"
+              name="duedate"
+              id="task-duedate"
+              className={styles.dateInput}
+            />
           </div>
         </div>
         <div className={styles.formSelectGroup}>
@@ -68,7 +73,7 @@ export default function CreateTask() {
             <label htmlFor="assignee" className={styles.label}>
               Assignee
             </label>
-            <select name="assignee" id="task-assignee">
+            <select name="assignee" id="task-assignee" className={styles.selectInput}>
               <option value="mary">Mary L.</option>
               <option value="john">John S.</option>
             </select>
@@ -77,7 +82,7 @@ export default function CreateTask() {
             <label htmlFor="task-tag" className={styles.label}>
               Tag
             </label>
-            <select name="tag" id="task-tag">
+            <select name="tag" id="task-tag" className={styles.selectInput}>
               <option value="editorial">Editorial</option>
               <option value="marketing">Marketing</option>
               <option value="personal">Personal</option>
