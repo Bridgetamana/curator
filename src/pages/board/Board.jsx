@@ -62,31 +62,28 @@ export default function Board() {
           <header className={styles.columnHeader}>
             <h2 className={styles.columnTitle}>To do</h2>
             <span className={styles.columnCount}>5</span>
-            <button
-              className={styles.columnAddButton}
-              aria-label="Add task to To do"
-            >
-              <NavLink to="create-task">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  width={18}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15"
-                  />
-                </svg>
-              </NavLink>
-            </button>
+            <NavLink to="/create-task" className={styles.columnAddButton}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                width={18}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </NavLink>
           </header>
 
           <ul className={styles.cardList}>
-            {taskList.filter((task) => task.status === "todo").map((task) => (
+            {taskList
+              .filter((task) => task.status === "todo")
+              .map((task) => (
                 <li>
                   <a href="#" className={styles.card}>
                     <p className={styles.cardTag}>{task.tag}</p>
@@ -115,27 +112,22 @@ export default function Board() {
           <header className={styles.columnHeader}>
             <h2 className={styles.columnTitle}>In Progress</h2>
             <span className={styles.columnCount}>2</span>
-            <button
-              className={styles.columnAddButton}
-              aria-label="Add task to To do"
-            >
-              <NavLink to="create-task">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  width={18}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15"
-                  />
-                </svg>
-              </NavLink>
-            </button>
+            <NavLink to="/create-task" className={styles.columnAddButton}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                width={18}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </NavLink>
           </header>
 
           <ul className={styles.cardList}>
@@ -170,27 +162,23 @@ export default function Board() {
           <header className={styles.columnHeader}>
             <h2 className={styles.columnTitle}>Completed</h2>
             <span className={styles.columnCount}>4</span>
-            <button
-              className={styles.columnAddButton}
-              aria-label="Add task to To do"
-            >
-              <NavLink to="create-task">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  width={18}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 4.5v15m7.5-7.5h-15"
-                  />
-                </svg>
-              </NavLink>
-            </button>
+
+            <NavLink to="/create-task" className={styles.columnAddButton}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                width={18}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
+            </NavLink>
           </header>
 
           <ul className={styles.cardList}>

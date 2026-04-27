@@ -136,29 +136,27 @@ export default function Sidebar({ isOpen, onClose }) {
         </div>
 
         <div className={styles.sidebarBottom}>
-          <button type="button" className={styles.createTaskButton}>
-            <NavLink
-              to="create-task"
-              className={styles.createTaskLink}
-              onClick={onClose}
+          <NavLink
+            to="create-task"
+            className={styles.createTaskButton}
+            onClick={onClose}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              width={18}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                width={18}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4.5v15m7.5-7.5h-15"
-                />
-              </svg>
-              Create Task
-            </NavLink>
-          </button>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+            Create Task
+          </NavLink>
         </div>
       </aside>
     </>
