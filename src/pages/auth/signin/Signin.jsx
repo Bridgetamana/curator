@@ -23,7 +23,6 @@ export default function Signin() {
       if (!response.ok) {
         throw new Error(data.error || 'Login failed');
       }
-      console.log('Token received:', data.token);
       localStorage.setItem('token', data.token);
     } catch (error) {
       console.error('Error:', error.message);
@@ -36,7 +35,7 @@ export default function Signin() {
         <h1>Welcome back</h1>
         <p>Sign in to your account to continue</p>
       </div>
-      <form className={styles.signinForm}>
+      <form className={styles.signinForm} onSubmit={handleSignin}>
         <div className={styles.inputGroup}>
           <label htmlFor='email'>Email:</label>
           <input
@@ -60,7 +59,6 @@ export default function Signin() {
         <button
           className={styles.submitButton}
           type='submit'
-          onClick={handleSignin}
         >
           Sign In
         </button>
