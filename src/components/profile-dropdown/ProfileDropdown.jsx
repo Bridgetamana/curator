@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import styles from "./ProfileDropdown.module.css";
-import avatar from "../../assets/avatar.webp";
+import avatar from "@/assets/avatar.webp";
 
 export default function ProfileDropdown() {
     const [isOpen, setIsOpen] = useState(false);

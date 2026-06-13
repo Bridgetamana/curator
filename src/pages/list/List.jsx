@@ -1,6 +1,6 @@
 import { useState } from "react";
-import avatar from "../../assets/avatar.webp";
-import TaskDetail from "../../components/task-detail/TaskDetail";
+import avatar from "@/assets/avatar.webp";
+import TaskDetail from "@/components/task-detail/TaskDetail";
 import styles from "./List.module.css";
 
 export default function List() {

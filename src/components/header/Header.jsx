@@ -1,54 +1,53 @@
-import styles from "./Header.module.css";
-import ProfileDropdown from "../profile-dropdown/ProfileDropdown";
+import styles from './Header.module.css';
+import ProfileDropdown from '@/components/profile-dropdown/ProfileDropdown';
 
 export default function Header({ onOpenSidebar }) {
-
   return (
     <header className={styles.appHeader}>
       <button
         className={styles.openSidebarButton}
-        aria-label="open sidebar"
+        aria-label='open sidebar'
         onClick={onOpenSidebar}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
           strokeWidth={1.5}
-          stroke="currentColor"
+          stroke='currentColor'
           width={18}
         >
           <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
           />
         </svg>
       </button>
 
       <form
         className={styles.searchForm}
-        role="search"
-        aria-label="Search focus sessions"
+        role='search'
+        aria-label='Search focus sessions'
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 24 24'
+          fill='currentColor'
           width={12}
-          aria-hidden="true"
+          aria-hidden='true'
         >
           <path
-            fillRule="evenodd"
-            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-            clipRule="evenodd"
+            fillRule='evenodd'
+            d='M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z'
+            clipRule='evenodd'
           />
         </svg>
         <input
           className={styles.searchInput}
-          type="search"
-          placeholder="Search..."
-          aria-label="Search..."
+          type='search'
+          placeholder='Search...'
+          aria-label='Search...'
         />
       </form>
 

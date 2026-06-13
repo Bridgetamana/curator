@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import avatar from "../../assets/avatar.webp";
+import avatar from "@/assets/avatar.webp";
 import styles from "./Board.module.css";
 
 export default function Board() {
