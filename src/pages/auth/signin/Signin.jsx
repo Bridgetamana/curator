@@ -1,7 +1,35 @@
+import { useState } from 'react';
 import styles from './Signin.module.css';
 import { Link } from 'react-router';
 
 export default function Signin() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSignin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/signin`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Login failed');
+      }
+      console.log('Token received:', data.token);
+      localStorage.setItem('token', data.token);
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+
   return (
     <section className={styles.signin}>
       <div className={styles.signinHeader}>
@@ -11,15 +39,33 @@ export default function Signin() {
       <form className={styles.signinForm}>
         <div className={styles.inputGroup}>
           <label htmlFor='email'>Email:</label>
-          <input type='email' id='email' placeholder='you@example.com' required />
+          <input
+            type='email'
+            id='email'
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder='you@example.com'
+            required
+          />
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor='password'>Password:</label>
-          <input type='password' placeholder='********' id='password' required />
+          <input
+            type='password'
+            placeholder='********'
+            id='password'
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-        <button className={styles.submitButton} type="submit">Sign In</button>
+        <button
+          className={styles.submitButton}
+          type='submit'
+          onClick={handleSignin}
+        >
+          Sign In
+        </button>
         <p className={styles.signinFooter}>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Don't have an account? <Link to='/signup'>Sign Up</Link>
         </p>
       </form>
     </section>
