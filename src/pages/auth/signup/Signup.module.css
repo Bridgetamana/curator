@@ -1,0 +1,77 @@
+.signup {
+  background-color: var(--cards);
+  width: 100%;
+  max-width: 400px;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+  border: 1px solid var(--secondary);
+}
+
+.signupHeader {
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+
+  h1 {
+    font-size: var(--title);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  p {
+    color: var(--muted_text);
+    font-size: var(--subtext);
+  }
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  label {
+    font-size: var(--label);
+  }
+
+  input {
+    padding: var(--spacing-xs);
+    border-radius: var(--radius);
+    border: 1px solid var(--secondary);
+    background: var(--bg);
+    color: var(--main_text);
+    outline: none;
+
+    &:focus {
+      border-color: var(--primary);
+    }
+  }
+}
+
+.submitButton {
+  background-color: var(--primary);
+  color: #fff;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.signupFooter {
+  text-align: center;
+  font-size: var(--subtext);
+  color: var(--muted_text);
+
+  a {
+    color: var(--primary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

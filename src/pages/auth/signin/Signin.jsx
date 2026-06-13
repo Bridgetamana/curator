@@ -3,19 +3,24 @@ import { Link } from 'react-router';
 
 export default function Signin() {
   return (
-    <section className={styles.signinPage}>
-      <h1>Welcome back</h1>
-      <form>
-        <div>
+    <section className={styles.signin}>
+      <div className={styles.signinHeader}>
+        <h1>Welcome back</h1>
+        <p>Sign in to your account to continue</p>
+      </div>
+      <form className={styles.signinForm}>
+        <div className={styles.inputGroup}>
           <label htmlFor='email'>Email:</label>
-          <input type='email' id='email' placeholder='you@gmail.com' />
+          <input type='email' id='email' placeholder='you@example.com' required />
         </div>
-        <div>
+        <div className={styles.inputGroup}>
           <label htmlFor='password'>Password:</label>
-          <input type='password' placeholder='********' id='password' />
+          <input type='password' placeholder='********' id='password' required />
         </div>
-        <button>Sign In</button>
-        <p>Don't have an account? <Link to="/signup">SignUp</Link></p>
+        <button className={styles.submitButton} type="submit">Sign In</button>
+        <p className={styles.signinFooter}>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
       </form>
     </section>
   );

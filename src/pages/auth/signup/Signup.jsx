@@ -3,24 +3,39 @@ import { Link } from 'react-router';
 
 export default function Signup() {
   return (
-    <section className={styles.signinPage}>
-      <h1>Create an account</h1>
-      <form>
-        <div>
-          <label htmlFor='name'>Name:</label>
-          <input type='name' id='name' placeholder='John Doe' />
+    <section className={styles.signup}>
+      <div className={styles.signupHeader}>
+        <h1>Create an account</h1>
+        <p>Get started with your free account</p>
+      </div>
+      <form className={styles.signupForm}>
+        <div className={styles.inputGroup}>
+          <label htmlFor='name'>Name</label>
+          <input type='text' id='name' placeholder='John Doe' required />
         </div>
-        <div>
-          <label htmlFor='email'>Email:</label>
-          <input type='email' id='email' placeholder='you@gmail.com' />
+        <div className={styles.inputGroup}>
+          <label htmlFor='email'>Email</label>
+          <input
+            type='email'
+            id='email'
+            placeholder='you@example.com'
+            required
+          />
         </div>
-        <div>
-          <label htmlFor='password'>Password:</label>
-          <input type='password' placeholder='********' id='password' />
+        <div className={styles.inputGroup}>
+          <label htmlFor='password'>Password</label>
+          <input
+            type='password'
+            placeholder='********'
+            id='password'
+            required
+          />
         </div>
-        <button>Sign Up</button>
-        <p>
-          Already have an account? <Link to='/signin'>SignIn</Link>
+        <button className={styles.submitButton} type='submit'>
+          Sign Up
+        </button>
+        <p className={styles.signupFooter}>
+          Already have an account? <Link to='/signin'>Sign In</Link>
         </p>
       </form>
     </section>
